@@ -1,0 +1,23 @@
+MVC controllers and Web API controllers serve different purposes in an application, and they have distinct characteristics. Here are the key differences:
+
+1. Purpose
+MVC Controller: Primarily used for handling user interface (UI) interactions and returning views (HTML). They process user inputs, interact with the model, and choose which view to render.
+Web API Controller: Designed for serving HTTP requests and returning data, typically in JSON or XML format. They are intended for building RESTful services.
+2. Return Types
+MVC Controller: Usually returns ActionResult, which can include views, partial views, or other results.
+Web API Controller: Returns IHttpActionResult or specific data types like IEnumerable<T>, which are serialized into JSON or XML.
+3. Routing
+MVC Controller: Uses conventional routing that maps URL patterns to controller actions, often leading to specific views.
+Web API Controller: Uses attribute-based routing or conventional routing that maps URLs directly to actions, focusing on the data and endpoints.
+4. Statefulness
+MVC Controller: Typically works with a stateful model where user sessions and cookies might be used for tracking state.
+Web API Controller: Generally stateless, with each request containing all necessary information, allowing better scalability.
+5. Format Negotiation
+MVC Controller: Primarily returns HTML but can return JSON or XML using specific formats if necessary.
+Web API Controller: Built for format negotiation, allowing clients to request data in various formats based on the Accept header.
+6. Attributes and Annotations
+MVC Controller: Often uses attributes like [HttpGet], [HttpPost], and model binding to manage form submissions and UI interactions.
+Web API Controller: Utilizes attributes like [HttpGet], [HttpPost], and routing attributes to define API endpoints and handle data serialization.
+7. Serialization
+MVC Controller: Uses views and view models for rendering data into HTML. JSON serialization is typically secondary.
+Web API Controller: Automatically serializes and deserializes data to and from JSON or XML, making it the primary focus.
