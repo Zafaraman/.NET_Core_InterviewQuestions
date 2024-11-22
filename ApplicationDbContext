@@ -1,0 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using YourNamespace.Models;
+
+namespace YourNamespace.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        { }
+
+        public DbSet<TubeMill_2> TubeMill_2 { get; set; }
+        public DbSet<TubeMill_3> TubeMill_3 { get; set; }
+        public DbSet<TubeMill_7> TubeMill_7 { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<TubeMill_2>().ToTable("TubeMill_2", "dbo");
+            modelBuilder.Entity<TubeMill_3>().ToTable("TubeMill_3", "dbo");
+            modelBuilder.Entity<TubeMill_7>().ToTable("TubeMill_7", "dbo");
+        }
+    }
+}
