@@ -1,0 +1,14 @@
+using System;
+
+namespace YourNamespace.Models
+{
+    public class TubeMillBase
+    {
+        public DateTime TIMESTAMP { get; set; }
+        public double Voltage_Percentage { get; set; }
+        public double Current_Percentage { get; set; }
+        public double Actual_KW { get; set; }
+        public double Actual_Frequency { get; set; }
+        public double LineSpeed { get; set; }
+    }
+}
