@@ -3,33 +3,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* Body Background */
 body {
-    background: linear-gradient(135deg, #1e90ff, #00c6ff);
     height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2016/12/17/19/56/forest-1913483_1280.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-/* Login Container */
-.login-container {
-    position: relative;
+/* Semi-Transparent Background Overlay */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 400px;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 40px 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    animation: fadeIn 1s ease-in-out;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Fade-in Animation */
+/* Login Box */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 40px 30px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 350px;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -41,12 +53,11 @@ body {
     }
 }
 
-/* Login Box */
-.login-box h2 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
-    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
 /* Input Group */
@@ -57,72 +68,90 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 10px 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px 5px;
+    border: none;
     outline: none;
     background: transparent;
-    color: #333;
-    transition: all 0.3s;
+    border-bottom: 2px solid #ccc;
+    color: #fff;
+    font-size: 16px;
+    transition: border-bottom 0.3s ease;
 }
 
 .input-group label {
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 0;
     transform: translateY(-50%);
+    color: #ccc;
     font-size: 16px;
-    color: #999;
+    transition: 0.3s ease;
     pointer-events: none;
-    transition: all 0.3s;
-}
-
-.input-group input:focus,
-.input-group input:valid {
-    border-color: #1e90ff;
 }
 
 .input-group input:focus + label,
 .input-group input:valid + label {
     top: -10px;
-    left: 5px;
     font-size: 12px;
-    color: #1e90ff;
+    color: #00c6ff;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid #00c6ff;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.options a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 /* Button */
 .btn {
     width: 100%;
     padding: 10px;
-    background: #1e90ff;
+    background: #00c6ff;
     border: none;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
 }
 
 .btn:hover {
-    background: #00c6ff;
+    background: #1e90ff;
 }
 
-/* Footer */
-.login-footer {
+/* Register Text */
+.register-text {
     text-align: center;
-    margin-top: 20px;
     font-size: 14px;
-    color: #666;
+    margin-top: 10px;
 }
 
-.login-footer a {
-    color: #1e90ff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.login-footer a:hover {
+.register-text a {
     color: #00c6ff;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
 }
